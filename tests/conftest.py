@@ -1,10 +1,13 @@
 import pytest
-from src.processing import filter_by_state, sort_by_date, initial_list
+
+from src.processing import filter_by_state, list_of_dict, sort_by_date
+
 
 @pytest.fixture
-def test_initial_list():
-    return 'EXECUTED'
+def test_list_of_dict():
+    return "EXECUTED"
+
 
 @pytest.fixture
-def test_initial_list_1():
-    return initial_list
+def test_list_of_dict_1():
+    return list_of_dict
