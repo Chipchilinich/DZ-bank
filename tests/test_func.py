@@ -1,6 +1,6 @@
 import pytest
 
-from src.main import get_data, mask_account_card
+from src.widget import get_new_data, mask_account_card
 from src.masks import get_mask_account, get_mask_card_number
 
 
@@ -20,8 +20,8 @@ def date():
     return "2018-07-11T02:26:18.671407"
 
 
-def test_get_data(date):
-    assert get_data(date) == "11.07.2018"
+def test_get_new_data(date):
+    assert get_new_data(date) == "11.07.2018"
 
 
 @pytest.mark.parametrize(
