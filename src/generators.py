@@ -1,5 +1,6 @@
 from typing import generator
 
+
 def transaction_descriptions(transactions: list) -> generator:
     """Возвращает описание операции"""
     for transaction in transactions:
@@ -16,7 +17,7 @@ def filter_by_currency(transactions: list, currency: str) -> generator:
 
 
 def card_number_generator(start: int, stop: int) -> generator:
-    """Генератор номеров бансковских карт в формате 0123 4567 8901 2345"""
+    """Генератор номеров банковских карт в формате 0123 4567 8901 2345"""
     card_number_int = 10000000000000000 + start
     while True:
         card_number_list = []
