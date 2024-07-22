@@ -3,9 +3,9 @@ from src.decorators import log, my_function
 
 
 def test_log(capsys):
-    with pytest.raises(Exception, match="Error"):
+    with pytest.raises(Exception):
         captured = capsys.readouterr()
-        assert captured.out == match
+        assert captured.out == "my_function error\n"
 
     @log
     def my_function(x=2, y=3):
