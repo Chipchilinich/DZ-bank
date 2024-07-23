@@ -1,24 +1,18 @@
-import pytest
-from src.decorators import log, my_function
+from src.decorators import log
 
 
 def test_log(capsys):
-    with pytest.raises(Exception):
-        captured = capsys.readouterr()
-        assert captured.out == "my_function error\n"
-
-    @log
-    def my_function(x=2, y=3):
+    @log(filename="test_log.txt")
+    def my_function(x, y):
         return x + y
 
-
-"""
-    result = my_function(2, 3)
-
-def test_retry_decorator():
-    with pytest.raises(Exception, match="Max retries exceeded"):
-        example_function()
-        hello_world()
+    # Проверка корректного выполнения функции
+    my_function(1, 2)
+    captured = capsys.readouterr()
+    assert "my_function called with args: (1, 2), kwargs:{}. Result: 3\n" in captured.out
+    # Проверка ошибки
+    try:
+        my_function(0, 2)
+    except TypeError as e:
         captured = capsys.readouterr()
-        assert captured.out == "Hello, world!\n"
-"""
+        assert "my function error: " in captured.out
