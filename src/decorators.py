@@ -21,10 +21,10 @@ def log(filename: Any) -> Callable:
                 if filename is not None:
                     with open(filename, "w") as file:
                         file.write(f"my function error:{e}. Input: {args, kwargs}")
-                # else: Не знаю нужно это или нет, на всякий случай(так и непонял что должно выводиться при ошибке)
-                # print(f"Функция не отрабатывает - введдите корректные данные: Ошибка {e}")
-                # return f"Функция не отрабатывает - введдите корректные данные: Ошибка {e}"
-                # return Exception("f"Функция не отрабатывает - введдите корректные данные: Ошибка {e}"")
+                else:
+                    print(f"Функция не отрабатывает - введите корректные данные: Ошибка {e}")
+                # return f"Функция не отрабатывает - введите корректные данные: Ошибка {e}"
+                # return Exception("f"Функция не отрабатывает - введите корректные данные: Ошибка {e}"")
                 return func(*args, **kwargs)
 
         return wrapper
@@ -37,5 +37,4 @@ def log(filename: Any) -> Callable:
 def my_function(x: int, y: int) -> int:
     return x + y
 
-
-# my_function(1,2)
+my_function(1,2)
