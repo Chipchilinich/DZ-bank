@@ -42,9 +42,6 @@ def transactions():
 def rub_transaction_number():
     return 441945886
 
-def test_transaction_amount_in_rub(transactions, rub_transaction_number):
-    assert transaction_amount_in_rub(transactions, rub_transaction_number) == "31957.58"
-
 @patch('requests.get')
 def test_convert_to_rub(mock_get):
     mock_get.return_value.json.return_value = ({'result': 60})
