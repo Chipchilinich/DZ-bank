@@ -14,7 +14,6 @@ logging.basicConfig(
     filename="../logs/utils.log",
     filemode="w",
 )
-
 logger = logging.getLogger("utils")
 
 
@@ -77,6 +76,7 @@ def convert_to_rub(transaction: dict) -> float:
         )
         data = response.json()
         return float(data["result"])
+
 
 if __name__ == "__main__":
     transactions = get_transactions_dictionary("../data/operations.json")
