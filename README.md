@@ -12,10 +12,32 @@ git clone https://клонировать https://github.com/Aliniss/Домашн
 
 ## Зависимости проекта:
 - The program uses the version Python 3.12.4
-- flake8 = "7.1.0"
-- black = "24.4.2"
-- isort = "5.13.2"
-- mypy = "1.10.0"
+- black==24.4.2
+- certifi==2024.7.4
+- charset-normalizer==3.3.2
+- click==8.1.7
+- colorama==0.4.6
+- coverage==7.6.0
+- flake8==7.1.0
+- idna==3.7
+- iniconfig==2.0.0
+- isort==5.13.2
+- mccabe==0.7.0
+- mypy==1.10.1
+- mypy-extensions==1.0.0
+- packaging==24.1
+- pathspec==0.12.1
+- platformdirs==4.2.2
+- pluggy==1.5.0
+- pycodestyle==2.12.0
+- pyflakes==3.2.0
+- pytest==8.2.2
+- pytest-cov==5.0.0
+- python-dotenv==1.0.1
+- requests==2.32.3
+- typing_extensions==4.12.2
+- urllib3==2.2.2
+
 
 ## Функции, которые мы будем использовать в этой версии кода:
 
