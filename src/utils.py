@@ -2,6 +2,7 @@ import json
 import logging
 import os
 from typing import Any
+
 import requests
 from dotenv import load_dotenv
 
@@ -72,7 +73,7 @@ def convert_to_rub(transaction: dict) -> float:
     else:
         response = requests.get(
             f"https://api.apilayer.com/exchangerates_data/convert?to={'RUB'}&from={currency}&amount={amount}",
-            headers={"apikey": api_key}
+            headers={"apikey": api_key},
         )
         data = response.json()
         return float(data["result"])
